@@ -1,0 +1,61 @@
+{
+    "workflowApiVersion": "1.1",
+    "metaData": {
+        "icon": "images/icon.png",
+        "category": "message"
+    },
+    "type": "RESTDE",
+    "lang": {
+        "en-US": {
+            "name": "REST Activity (Workflow API v1.1)",
+            "description": "An example REST activity using workflow API v1.1 format."
+        }
+    },
+    "arguments": {
+        "execute": {
+            "inArguments": [{
+                "emailAddress": "{{Contact.Attribute.CustomActivity.EmailAddress}}"
+            }],
+            "outArguments": [],
+            "url": "https://journey-builder-poc.herokuapp.com/journeybuilder/execute"
+        }
+    },
+    "configurationArguments": {
+        "save": {
+            "url": "https://journey-builder-poc.herokuapp.com/journeybuilder/save"
+        },
+        "publish": {
+            "url": "https://journey-builder-poc.herokuapp.com/journeybuilder/publish"
+        },
+        "validate": {
+            "url": "https://journey-builder-poc.herokuapp.com/journeybuilder/validate"
+        },
+        "stop": {
+            "url": "https://journey-builder-poc.herokuapp.com/journeybuilder/stop"
+        }
+    },
+    "wizardSteps": [{
+            "label": "Select Action",
+            "key": "selectAction"
+        },
+        {
+            "label": "Configuration",
+            "key": "configuration"
+        }
+    ],
+    "userInterfaces": {
+        "configModal": {
+            "height": 200,
+            "width": 300,
+            "fullscreen": false
+        }
+    },
+    "schema": {
+        "arguments": {
+            "execute": {
+                "inArguments": [],
+                "outArguments": []
+            }
+        }
+    }
+}
